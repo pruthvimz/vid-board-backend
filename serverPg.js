@@ -5,7 +5,7 @@ const fileUpload = require('express-fileupload');
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('passport')
-const config = require('./server/db-config');
+const config = require('./src/server/db-config');
 
 const fs = require('fs');
 const nodemailer = require('nodemailer');
@@ -50,8 +50,8 @@ client.connect();
 /*
  passport local signup and signin strategy.
  */
-const localSignupStrategy = require('./server/strategies/localSignupStrategy')
-const localSigninStrategy = require('./server/strategies/localSigninStrategy')
+const localSignupStrategy = require('./src/server/strategies/localSignupStrategy')
+const localSigninStrategy = require('./src/server/strategies/localSigninStrategy')
 
 app.use(passport.initialize())
 passport.use('local-signup', localSignupStrategy)
@@ -60,8 +60,8 @@ passport.use('local-login', localSigninStrategy)
 //const authCheck = require('./server/auth-check-middleware/auth-check')
 //app.use('/api', authCheck)
 
-const apiRoute = require('./server/server-route/api')
-const authRoute = require('./server/server-route/auth')
+const apiRoute = require('./src/server/server-route/api')
+const authRoute = require('./src/server/server-route/auth')
 app.use('/api', apiRoute)
 app.use('/auth', authRoute)
 
