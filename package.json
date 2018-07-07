@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base static --hot --watch",
     "start": "node frontendServer.js",
-    "build": "webpack -p --config webpack.config.js",    
+    "build": "webpack --config webpack.config.js",    
     "heroku-prebuild": "npm cache clean --force",
     "heroku-postbuild": "npm run build"
   },

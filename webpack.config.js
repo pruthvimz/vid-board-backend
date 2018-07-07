@@ -13,12 +13,10 @@ module.exports = {
 
     output: {
         path: DIST_DIR,
-        filename: 'index.js',
-        publicPath: 'static'
+        filename: 'index.js'
     },
 
     devServer: {
-        inline: true,
         port: port,
         index: './index.html',
         historyApiFallback: true
