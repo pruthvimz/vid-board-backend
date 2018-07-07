@@ -1,0 +1,9 @@
+{
+  "name": "vid-board",
+  "description": "Vidboard demo",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
