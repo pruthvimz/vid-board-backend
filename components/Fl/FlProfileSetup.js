@@ -18,7 +18,7 @@ import Grid from "@material-ui/core/Grid";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 let tagsInput = require("tags-input");
 
-import Dashboard from "./../../container/Dashboard";
+import Dashboard from "../../container/Dashboard";
 
 const styles = theme => ({
   container: {

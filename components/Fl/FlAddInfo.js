@@ -13,7 +13,7 @@ import { withStyles } from "@material-ui/core/styles";
 import InputRange from "react-input-range";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 let tagsInput = require("tags-input");
-import Dashboard from "./../../container/Dashboard";
+import Dashboard from "../../container/Dashboard";
 
 const styles = theme => ({
   container: {

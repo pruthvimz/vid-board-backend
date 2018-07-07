@@ -14,7 +14,7 @@ import Button from "@material-ui/core/Button";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import { withStyles } from "@material-ui/core/styles";
 
-import Dashboard from "./../../container/Dashboard";
+import Dashboard from "../../container/Dashboard";
 
 const styles = theme => ({
   container: {

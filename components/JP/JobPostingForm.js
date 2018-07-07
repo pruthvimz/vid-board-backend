@@ -18,7 +18,7 @@ let tagsInput = require("tags-input");
 import Grid from "@material-ui/core/Grid";
 
 import JpProfile from "./JpProfile";
-import Dashboard from "./../../container/Dashboard";
+import Dashboard from "../../container/Dashboard";
 
 const styles = theme => ({
   container: {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Auth from "./../../server/auth/authUserCheck";
+import Auth from "../../server/auth/authUserCheck";
 import GoogleLogin from "react-google-login";
 import GoogleLogout from "react-google-login";
 

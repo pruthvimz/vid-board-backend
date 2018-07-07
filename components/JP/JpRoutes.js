@@ -12,7 +12,7 @@ import JpLogin from "./JpLogin.jsx";
 import JobPosterSignUp from "./JpSignUpIn";
 import JpProfile from "./JpProfile";
 import JobPostingForm from "./JobPostingForm";
-import Dashboard from "./../../container/Dashboard";
+import Dashboard from "../../container/Dashboard";
 import JpDashboard from "./JpDashboard";
 
 import JpProfileSetup from "./JpProfileSetup";

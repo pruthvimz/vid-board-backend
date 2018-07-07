@@ -7,9 +7,9 @@ import Icon from "@material-ui/core/Icon";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
-import RenderJobPosts from "./../../container/RenderJobPosts";
+import RenderJobPosts from "../../container/RenderJobPosts";
 import JpProfile from "./JpProfile";
-import Dashboard from "./../../container/Dashboard";
+import Dashboard from "../../container/Dashboard";
 
 class JpDashboard extends React.Component {
   constructor(props) {

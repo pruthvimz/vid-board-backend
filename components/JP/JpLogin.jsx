@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import JpSignUpIn from "./JpSignUpIn";
-import Auth from "./../../server/auth/authUserCheck";
+import Auth from "../../server/auth/authUserCheck";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 export default class JpLogin extends React.Component {

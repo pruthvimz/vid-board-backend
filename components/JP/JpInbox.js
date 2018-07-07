@@ -6,9 +6,9 @@ import Icon from "@material-ui/core/Icon";
 import Grid from "@material-ui/core/Grid";
 
 import JpProfile from "./JpProfile";
-import RenderTitleCard from "./../../container/RenderTitleCard";
-import RenderFlInfo from "./../../container/RenderFlInfo";
-import Dashboard from "./../../container/Dashboard";
+import RenderTitleCard from "../../container/RenderTitleCard";
+import RenderFlInfo from "../../container/RenderFlInfo";
+import Dashboard from "../../container/Dashboard";
 
 class JpInbox extends React.Component {
   constructor(props) {

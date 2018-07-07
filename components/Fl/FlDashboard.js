@@ -18,8 +18,8 @@ import SnackbarContent from "@material-ui/core/SnackbarContent";
 import Grid from "@material-ui/core/Grid";
 
 import FlProfile from "./FlProfile";
-import RenderJobPosts from "./../../container/RenderJobPosts";
-import Dashboard from "./../../container/Dashboard";
+import RenderJobPosts from "../../container/RenderJobPosts";
+import Dashboard from "../../container/Dashboard";
 
 const styles = theme => ({
   container: {

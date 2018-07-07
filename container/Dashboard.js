@@ -33,15 +33,15 @@ import FormatAlignLeft from "@material-ui/icons/FormatAlignLeft";
 import Inbox from "@material-ui/icons/Inbox";
 //import Message from '@material-ui/icons/Message';
 
-import FlProfileSetup from "./../components/FL/FlProfileSetup";
-import FlDashboard from "./../components/FL/FlDashboard";
-import FlAddInfo from "./../components/FL/FlAddInfo";
-import FlInbox from "./../components/FL/FlInbox";
+import FlProfileSetup from "../components/FL/FlProfileSetup";
+import FlDashboard from "../components/FL/FlDashboard";
+import FlAddInfo from "../components/FL/FlAddInfo";
+import FlInbox from "../components/FL/FlInbox";
 
-import JpProfileSetup from "./../components/JP/JpProfileSetup";
-import JobPostingForm from "./../components/JP/JobPostingForm";
-import JpDashboard from "./../components/JP/JpDashboard";
-import JpInbox from "./../components/JP/JpInbox";
+import JpProfileSetup from "../components/JP/JpProfileSetup";
+import JobPostingForm from "../components/JP/JobPostingForm";
+import JpDashboard from "../components/JP/JpDashboard";
+import JpInbox from "../components/JP/JpInbox";
 
 import Auth from "../server/auth/authUserCheck";
 
