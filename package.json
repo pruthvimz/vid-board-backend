@@ -4,7 +4,7 @@
   "description": "Gather Freelancer and Job poster",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server -p $port"
   },
   "author": "Pruthvi",
   "license": "MIT",
