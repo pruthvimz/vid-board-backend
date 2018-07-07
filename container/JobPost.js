@@ -52,7 +52,7 @@ class JobPost extends React.Component {
       return false;
     }
 
-    let url = "http://localhost:8080/showFlInterest";
+    let url = localStorage.getItem("BACKEND_HOST")+"/showFlInterest";
     let restMethod = "POST";
     let async = true;
 

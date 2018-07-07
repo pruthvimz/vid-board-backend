@@ -93,7 +93,7 @@ export default class JpLogin extends React.Component {
     let password = this.state.user.password;
     let confirmPwd = this.state.user.confirmPwd;
 
-    let url = "http://localhost:8080/auth/signup";
+    let url = localStorage.getItem("BACKEND_HOST")+"/auth/signup";
     let restMethod = "POST";
     let async = true;
     let data = {
@@ -139,7 +139,7 @@ export default class JpLogin extends React.Component {
   doSignIn = e => {
     e.preventDefault();
     console.log("in do Sign In");
-    let url = "http://localhost:8080/auth/login";
+    let url = localStorage.getItem("BACKEND_HOST")+"/auth/login";
     let restMethod = "POST";
     let async = true;
     let data = {

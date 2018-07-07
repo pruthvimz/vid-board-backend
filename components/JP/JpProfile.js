@@ -38,7 +38,7 @@ class JpProfile extends React.Component {
   fetchJpProfile = () => {
     //        e.preventDefault();
 
-    let url = "http://localhost:8080/JpProfile";
+    let url = localStorage.getItem("BACKEND_HOST")+"/JpProfile";
     let restMethod = "POST";
     let async = true;
 

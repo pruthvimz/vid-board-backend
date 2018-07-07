@@ -2,8 +2,16 @@ const jwt = require('jsonwebtoken');
 const {Client} = require('pg')
 const config = require('../db-config');
 
+var dbURI
+if(process.env.node_env === 'production'){
+    dbURI = process.env.DATABASE_URL
+}
+else{
+    dbURI = config.dbUri
+}
+
 const client = new Client({
-    connectionString: config.dbUri,
+    connectionString: dbURI
 })
 client.connect()
 

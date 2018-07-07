@@ -81,7 +81,7 @@ class FlAddInfo extends React.Component {
   doOnSubmit = e => {
     e.preventDefault();
 
-    let url = "http://localhost:8080/FlAddInfo";
+    let url = localStorage.getItem("BACKEND_HOST")+"/FlAddInfo";
     let restMethod = "POST";
     let async = true;
 

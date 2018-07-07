@@ -1,10 +1,10 @@
 {
-  "name": "reactdemo",
+  "name": "Vidboard",
   "version": "1.0.0",
-  "description": "React Demo",
+  "description": "Gather Freelancer and Job poster",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --port 8081"
+    "start": "webpack-dev-server"
   },
   "author": "Pruthvi",
   "license": "MIT",

@@ -82,7 +82,7 @@ class FlInbox extends React.Component {
   doOnSubmit = e => {
     if (e) e.preventDefault();
 
-    let url = "http://localhost:8080/FlInbox";
+    let url = localStorage.getItem("BACKEND_HOST")+"/FlInbox";
     let restMethod = "POST";
     let async = true;
 

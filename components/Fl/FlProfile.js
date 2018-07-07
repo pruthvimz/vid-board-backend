@@ -38,7 +38,7 @@ class FlProfile extends React.Component {
   fetchJpProfile = () => {
     //        e.preventDefault();
 
-    let url = "http://localhost:8080/FlProfile";
+    let url = localStorage.getItem("BACKEND_HOST")+"/FlProfile";
     let restMethod = "POST";
     let async = true;
 

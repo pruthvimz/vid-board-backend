@@ -38,7 +38,7 @@ class JpDashboard extends React.Component {
   };
 
   componentDidMount() {
-    let url = "http://localhost:8080/JpDashboard";
+    let url = localStorage.getItem("BACKEND_HOST")+"/JpDashboard";
     let restMethod = "POST";
     let async = true;
     let whereQuery = { email: this.state.email };

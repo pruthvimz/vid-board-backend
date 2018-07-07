@@ -43,7 +43,7 @@ class FlInfo extends React.Component {
   showInterest = (e, job_interest_id) => {
     e.preventDefault();
 
-    let url = "http://localhost:8080/showJpInterest";
+    let url = localStorage.getItem("BACKEND_HOST")+"/showJpInterest";
     let restMethod = "POST";
     let async = true;
 

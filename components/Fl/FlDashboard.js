@@ -88,7 +88,7 @@ class FlDashboard extends React.Component {
 
   getLoginDetail = (email, user_type) => {
 //    console.log("in getLoginDetail");
-    let url = "http://localhost:8080/getLoginDetail";
+    let url = localStorage.getItem("BACKEND_HOST")+"/getLoginDetail";
     let restMethod = "POST";
     let async = true;
     let data = {
@@ -125,7 +125,7 @@ class FlDashboard extends React.Component {
   doOnSubmit = e => {
     if (e) e.preventDefault();
 
-    let url = "http://localhost:8080/FlDashboard";
+    let url = localStorage.getItem("BACKEND_HOST")+"/FlDashboard";
     let restMethod = "POST";
     let async = true;
 

@@ -43,7 +43,7 @@ export default class FlLogin extends React.Component {
     let profile = googleUser.getBasicProfile();
     let id_token = googleUser.getAuthResponse().id_token;
     let email = profile.getEmail();
-    let url = "http://localhost:8080/doFlSignIn";
+    let url = localStorage.getItem("BACKEND_HOST")+"/doFlSignIn";
     let restMethod = "POST";
     let async = true;
     let data = {

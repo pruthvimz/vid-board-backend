@@ -5,33 +5,45 @@ const fileUpload = require('express-fileupload');
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('passport')
+const config = require('./server/db-config');
 
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-    service: process.env.mailService,
+    service: process.env.MAIL_SERVICE,
     auth: {
-        user: process.env.email,
-        pass: process.env.pass
+        user: process.env.MAIL_SERVICE_EMAIL,
+        pass: process.env.MAIL_SERVICE_PASS
     }
 });
 
-const port = process.env.PORT || 8080
-const serverName = 'localhost:'+port
+const host = process.env.HOST || 'localhost';
+const port = process.env.PORT || 8080;
+const serverName = host;
+//const serverName = host+':'+port;
 
 app.use(cors())
 app.use(fileUpload());
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
 
+let dbURI
+let ssl
+
+if(process.env.node_env === 'production'){
+    dbURI = process.env.DATABASE_URL
+    ssl = true
+}
+else{
+    dbURI = config.dbUri
+    ssl = false
+}
+
 const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'VidboardDB',
-    password: 'postgres',
-    port: 5432,
-})
+    connectionString: dbURI,
+    ssl: ssl,
+});
 
 client.connect();
 
@@ -510,7 +522,7 @@ app.post("/getLoginDetail", (req, res) => {
 /* ----------------------------------------------------------------------------- */
 
 app.listen(port, () => {
-    console.log("DB server started at 8080")
+    console.log("DB server started at ", port)
 })
 
 //    fs.writeFile("C:\Users\yash\Desktop\Work\fs_base64.txt", FILE_CONTENT, function (err) {

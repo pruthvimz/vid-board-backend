@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const SRC_DIR = path.resolve(__dirname, "");
 const DIST_DIR = path.resolve(__dirname, "");
+const port = process.env.PORT || 8081;
 
 module.exports = {
     entry: {
@@ -17,7 +18,7 @@ module.exports = {
 
     devServer: {
         inline: true,
-        port: 8081,
+        port: port,
         historyApiFallback: true
     },
 

@@ -192,7 +192,7 @@ class Dashboard extends React.Component {
   getLoginDetail = (email, userType, redirectValidator) => {
     //        e.preventDefault()
     console.log("in getLoginDetail email : " + email);
-    let url = "http://localhost:8080/getLoginDetail";
+    let url = localStorage.getItem("BACKEND_HOST")+"/getLoginDetail";
     let restMethod = "POST";
     let async = true;
     let data = {

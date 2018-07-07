@@ -114,7 +114,7 @@ class JobPostingForm extends React.Component {
 
     if (!success) return false;
 
-    let url = "http://localhost:8080/AddJobPost";
+    let url = localStorage.getItem("BACKEND_HOST")+"/AddJobPost";
     let restMethod = "POST";
     let async = true;
 

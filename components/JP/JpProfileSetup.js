@@ -116,7 +116,7 @@ class JpProfileSetup extends React.Component {
 
     if (!success) return false;
 
-    let url = "http://localhost:8080/JpProfileSetup";
+    let url = localStorage.getItem("BACKEND_HOST")+"/JpProfileSetup";
     let restMethod = "POST";
     let async = true;
 

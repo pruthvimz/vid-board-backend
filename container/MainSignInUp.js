@@ -40,6 +40,22 @@ class MainSignInUp extends React.Component {
       showFl: false
     };
   }
+  
+  componentDidMount = () => {
+    const hostname = window && window.location && window.location.hostname;
+
+    let backendHost;
+
+    if(hostname === 'https://vid-board.herokuapp.com') {
+      backendHost = 'https://vid-board-backend.herokuapp.com';
+    } else {
+      backendHost = process.env.REACT_APP_LOCAL_BACKEND || 'http://localhost:8080';
+    }
+
+//    export const BACKEND = `${backendHost}`;
+    localStorage.setItem('BACKEND_HOST',backendHost)
+//    console.log("BACKEND_HOST : ",localStorage.getItem("BACKEND_HOST"))
+  }
 
   show = from => {
     //        console.log(from)

@@ -37,7 +37,7 @@ class JpInbox extends React.Component {
   };
 
   componentDidMount() {
-    let url = "http://localhost:8080/JpInbox";
+    let url = localStorage.getItem("BACKEND_HOST")+"/JpInbox";
     let restMethod = "POST";
     let async = true;
     let whereQuery = {

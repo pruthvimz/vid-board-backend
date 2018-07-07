@@ -176,7 +176,7 @@ class FlProfileSetup extends React.Component {
     if (!success) return false;
     return false; //Remove
 
-    let url = "http://localhost:8080/FlProfileSetup";
+    let url = localStorage.getItem("BACKEND_HOST")+"/FlProfileSetup";
     let restMethod = "POST";
     let async = true;
 
