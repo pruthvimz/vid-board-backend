@@ -1,6 +1,10 @@
 {
   "name": "Vidboard",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.3.0"
+  }
   "description": "Gather Freelancer and Job poster",
   "main": "index.js",
   "scripts": {
