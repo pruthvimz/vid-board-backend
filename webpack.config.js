@@ -1,5 +1,4 @@
 const path = require("path");
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const SRC_DIR = path.resolve(__dirname, "");
@@ -13,12 +12,10 @@ module.exports = {
 
     output: {
         path: DIST_DIR,
-        filename: 'index.js',
-        publicPath: 'static'
+        filename: 'index.js'
     },
 
     devServer: {
-        inline: true,
         port: port,
         index: './index.html',
         historyApiFallback: true

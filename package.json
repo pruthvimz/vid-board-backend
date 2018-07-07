@@ -9,9 +9,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base static --hot --watch",
-    "start": "node frontendServer.js",
-    "build": "webpack -p --config webpack.config.js",
-    "postinstall": "npm run build"
+    "start": "webpack && node frontendServer.js"
   },
   "author": "Pruthvi",
   "license": "MIT",
@@ -50,7 +48,6 @@
     "react-sanfona": "^1.2.2",
     "tags-input": "^1.1.1",
     "validator": "^10.3.0",
-        
     "babel-cli": "^6.26.0",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.11",
