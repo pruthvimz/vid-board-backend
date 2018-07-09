@@ -10,6 +10,8 @@ const config = require('./src/server/db-config');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 
+console.log("In serverPg file");
+
 const transporter = nodemailer.createTransport({
     service: process.env.MAIL_SERVICE,
     auth: {
@@ -27,6 +29,10 @@ app.use(cors())
 app.use(fileUpload());
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
+
+console.log("process.env.node_env : ",process.env.node_env);
+console.log("---------------------------------------------------------");
+console.log("process.env : ",process.env);
 
 let dbURI
 let ssl
