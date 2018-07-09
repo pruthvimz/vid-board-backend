@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Typography from "@material-ui/core/Typography";
-import FlInfo from "./../container/FlInfo";
+import FlInfo from "./FlInfo";
 
 class RenderFlInfo extends React.Component {
   constructor(props) {

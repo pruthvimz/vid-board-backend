@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import Chip from "@material-ui/core/Chip";
 import Typography from "@material-ui/core/Typography";
-import RenderFlInfo from "./../container/RenderFlInfo";
+import RenderFlInfo from "./RenderFlInfo";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";

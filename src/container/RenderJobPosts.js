@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import JobPost from "./../container/JobPost";
+import JobPost from "./JobPost";
 
 class RenderJobPosts extends React.Component {
   constructor(props) {

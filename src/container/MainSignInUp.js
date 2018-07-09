@@ -17,8 +17,8 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import Grid from "@material-ui/core/Grid";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 
-import JpLogin from "./../components/JP/JpLogin.jsx";
-import FlLogin from "./../components/FL/FlLogin.jsx";
+import JpLogin from "../components/JP/JpLogin.jsx";
+import FlLogin from "../components/FL/FlLogin.jsx";
 
 //import JpMain from './../../JpMain'
 //import FlMain from './../../FlMain'
