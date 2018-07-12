@@ -1,0 +1,110 @@
+
+.jobs-list {
+    width:100%;
+}
+
+.work_textarea {
+    background-attachment: local;
+    background-image:
+        linear-gradient(to right, white 10px, transparent 10px),
+        linear-gradient(to left, white 10px, transparent 10px),
+        repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    line-height: 31px;
+    padding: 8px 10px;
+
+}
+
+.job_post_card_div ul li:nth-child(n+2) {
+    padding-bottom: 5px !IMPORTANT;
+    padding-top: 0 !important;
+}
+
+#jpJobPostFormGrid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    text-align: center;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+#jpJobPostForm {
+    width: 100%;
+    display: block;
+}
+
+#jpJobPostForm .tags-input{
+    width: 100%;
+}
+
+#jpJobPostForm .tags-input {
+    margin-top: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+
+#jpJobPostForm p {
+    font-size: 16px;
+    margin: 0 0 15px;
+}
+
+#mainSignInUpGrid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*max-width: 400px;*/
+}
+
+#mainSignInUpGrid img {
+    width: 100%;
+    height: auto;
+    /*background-size:cover;*/
+}
+
+#mainSignInUpGrid .btnJp {     
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: Transparent;
+    color: black;
+    font-size: 50px;
+    padding: 12px 24px;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#mainSignInUpGrid .btnJp:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+
+#mainSignInUpGrid .btnFl {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: Transparent;
+    color: black;
+    font-size: 50px;
+    padding: 12px 24px;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#mainSignInUpGrid .btnFl:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+.tags-input{display:inline-block;padding:0 2px;background:#FFF;border:1px solid #CCC;width:16em;border-radius:2px;box-shadow:inset 0 1px 2px rgba(0,0,0,.1)}.tags-input .tag{display:inline-block;background:#EEE;color:#444;padding:0 4px;margin:2px;border:1px solid #CCC;border-radius:2px;font:inherit;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;transition:all .1s ease}.tags-input .tag.selected{background-color:#777;border-color:#777;color:#EEE}.tags-input .tag.dupe{-webkit-transform:scale3d(1.2,1.2,1.2);transform:scale3d(1.2,1.2,1.2);background-color:#FCC;border-color:#700}.tags-input input{-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important;display:inline-block!important;padding:3px;margin:0!important;background:0 0!important;border:none!important;box-shadow:none!important;font:inherit!important;font-size:100%!important;outline:0!important}.tags-input .selected~input{opacity:.3}

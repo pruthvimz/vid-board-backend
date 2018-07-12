@@ -5,9 +5,6 @@ import ReactDOM, { render } from "react-dom"
 //import JpMain from './JpMain.jsx';
 import Vidboard from './Vidboard.jsx';
 
-import './css/style.css'
-import './css/tags-input.css'
-
 //ReactDOM.render(<App />, document.getElementById('app'));
 //ReactDOM.render(<JpMain />, document.getElementById('JpMainDiv'));
 //ReactDOM.render(<FlMain />, document.getElementById('FlMainDiv'));

@@ -6,12 +6,12 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { browserHistory } from "react-router";
 
 import "!style-loader!css-loader!react-input-range/lib/css/index.css";
-import Saparator from "./src/container/Saparator";
+import Saparator from "./container/Saparator";
 
-import MainSignInUp from "./src/container/MainSignInUp";
-import Dashboard from "./src/container/Dashboard";
-import JpRoutes from "./src/components/JP/JpRoutes";
-import FlRoutes from "./src/components/FL/FlRoutes";
+import MainSignInUp from "./container/MainSignInUp";
+import Dashboard from "./container/Dashboard";
+import JpRoutes from "./components/JP/JpRoutes";
+import FlRoutes from "./components/FL/FlRoutes";
 
 //import JpMain from './JpMain'
 //import FlMain from './FlMain'

@@ -1,0 +1,4 @@
+{
+  "dbUri": "postgresql://postgres:postgres@localhost:5432/VidboardDB",
+  "jwtSecret": "vidboard is the secret for now .."
+}

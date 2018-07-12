@@ -5,12 +5,10 @@ const fileUpload = require('express-fileupload');
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('passport')
-const config = require('./src/server/db-config');
+const config = require('./server/db-config');
 
 const fs = require('fs');
 const nodemailer = require('nodemailer');
-
-console.log("In serverPg file");
 
 const transporter = nodemailer.createTransport({
     service: process.env.MAIL_SERVICE,
@@ -19,6 +17,7 @@ const transporter = nodemailer.createTransport({
         pass: process.env.MAIL_SERVICE_PASS
     }
 });
+//console.log("process.env : \n",process.env);
 
 const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 8080;
@@ -30,20 +29,18 @@ app.use(fileUpload());
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
 
-console.log("process.env.node_env : ",process.env.node_env);
-console.log("---------------------------------------------------------");
-console.log("process.env : ",process.env);
-
 let dbURI
 let ssl
 
 if(process.env.node_env === 'production'){
     dbURI = process.env.DATABASE_URL
     ssl = true
+    console.log("production dbURI : ",dbURI);
 }
 else{
     dbURI = config.dbUri
     ssl = false
+    console.log("local dbURI : ",dbURI);
 }
 
 const client = new Client({
@@ -56,8 +53,8 @@ client.connect();
 /*
  passport local signup and signin strategy.
  */
-const localSignupStrategy = require('./src/server/strategies/localSignupStrategy')
-const localSigninStrategy = require('./src/server/strategies/localSigninStrategy')
+const localSignupStrategy = require('./server/strategies/localSignupStrategy')
+const localSigninStrategy = require('./server/strategies/localSigninStrategy')
 
 app.use(passport.initialize())
 passport.use('local-signup', localSignupStrategy)
@@ -66,8 +63,8 @@ passport.use('local-login', localSigninStrategy)
 //const authCheck = require('./server/auth-check-middleware/auth-check')
 //app.use('/api', authCheck)
 
-const apiRoute = require('./src/server/server-route/api')
-const authRoute = require('./src/server/server-route/auth')
+const apiRoute = require('./server/server-route/api')
+const authRoute = require('./server/server-route/auth')
 app.use('/api', apiRoute)
 app.use('/auth', authRoute)
 
@@ -526,6 +523,29 @@ app.post("/getLoginDetail", (req, res) => {
     })
 })
 /* ----------------------------------------------------------------------------- */
+
+app.get("/", (req, res) => {
+    console.log('Server setup successfully completed');
+//    res.writeHead(200, {"Content-Type": "text/html"})
+//    res.end(new Buffer('<h1>Server setup successfully completed</h1>'))
+    let query = 'SELECT * FROM LOGIN_MASTER LIMIT 1';
+    client.query(query, null, (err, result) => {
+        console.log(err ? err.stack : 'Query Executed!')
+//        console.log("result.rows.length : " + result.rows.length);
+        if (result.rows.length > 0) {
+            console.log("Success with DB : \n", result.rows[0]);
+            res.writeHead(200, {"Content-Type": "text/json"})
+            res.end(JSON.stringify({success: true, message: result.rows[0]}))
+        } else {
+            console.log("Error with DB");
+            res.writeHead(500, {"Content-Type": "text/json"})
+            res.end(JSON.stringify({success: false, message: 'Error with DB'}))
+        }
+    })
+    
+//    res.writeHead(500, {"Content-Type": "text/json"})
+//    res.end(JSON.stringify({success: false, message: 'Login detail not found'}))
+})
 
 app.listen(port, () => {
     console.log("DB server started at ", port)

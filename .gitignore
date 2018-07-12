@@ -1,4 +1,7 @@
 # Dependency directories
 node_modules/
 nbproject/
-dist/
+
+# Dependency files
+.env
+listEnv.js
