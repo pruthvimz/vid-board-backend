@@ -2,16 +2,18 @@ const {Client} = require('pg')
 const PassportLocalStrategy = require('passport-local').Strategy
 const config = require('../db-config');
 
-var dbURI
-if(process.env.node_env === 'production'){
-    dbURI = process.env.DATABASE_URL
-}
-else{
-    dbURI = config.dbUri
-}
+var dbURI = process.env.DATABASE_URL
+var ssl = process.env.DATABASE_SSL
+//if(process.env.node_env === 'production'){
+//    dbURI = process.env.DATABASE_URL
+//}
+//else{
+//    dbURI = config.dbUri
+//}
 
 const client = new Client({
-    connectionString: dbURI
+    connectionString: dbURI,
+    ssl: ssl
 })
 client.connect()
 

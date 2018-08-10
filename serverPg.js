@@ -32,16 +32,16 @@ app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
 let dbURI
 let ssl
 
-if(process.env.node_env === 'production'){
+//if(process.env.node_env === 'production'){
     dbURI = process.env.DATABASE_URL
-    ssl = true
-    console.log("production dbURI : ",dbURI);
-}
-else{
-    dbURI = config.dbUri
-    ssl = false
-    console.log("local dbURI : ",dbURI);
-}
+    ssl = process.env.DATABASE_SSL
+    console.log(" dbURI : ",dbURI);
+//}
+//else{
+//    dbURI = config.dbUri
+//    ssl = false
+//    console.log("local dbURI : ",dbURI);
+//}
 
 const client = new Client({
     connectionString: dbURI,
@@ -418,7 +418,7 @@ app.post("/FlDashboard", (req, res) => {
         } else if (req.body.searchIn == "Skills") {
             SEARCH_FIELD = 'SKILLS';
         }
-        query += " AND " + SEARCH_FIELD + " LIKE '%' || '" + req.body.searchText + "' || '%' ";
+        query += " AND " + SEARCH_FIELD + " ILIKE '%' || '" + req.body.searchText + "' || '%' ";
     }
     query += " AND MIN_BUDGET > " + req.body.min_budget + " AND MAX_BUDGET < " + req.body.max_budget;
     if (req.body.equipment) {
