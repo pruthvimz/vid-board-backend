@@ -9,6 +9,7 @@ const config = require('./server/db-config');
 
 const fs = require('fs');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const transporter = nodemailer.createTransport({
     service: process.env.MAIL_SERVICE,
@@ -45,7 +46,7 @@ let ssl
 
 const client = new Client({
     connectionString: dbURI,
-    ssl: ssl,
+    ssl: (ssl == 'true')
 });
 
 client.connect();

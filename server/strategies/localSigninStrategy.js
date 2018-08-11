@@ -13,7 +13,7 @@ var ssl = process.env.DATABASE_SSL
 
 const client = new Client({
     connectionString: dbURI,
-    ssl: ssl
+    ssl: (ssl == 'true')
 })
 client.connect()
 
