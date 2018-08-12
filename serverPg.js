@@ -22,8 +22,9 @@ const transporter = nodemailer.createTransport({
 
 const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 8080;
-const serverName = host;
-//const serverName = host+':'+port;
+let serverName = host;
+if(process.env.node_env == 'development')
+    serverName = 'http://' + host + ':' + port;
 
 app.use(cors())
 app.use(fileUpload());
@@ -323,14 +324,14 @@ app.post("/FlProfileSetup", (req, res) => {
     htmlContent += '<h5>Email : ' + req.body.email + '</h5>'
     htmlContent += '<p>Main location : ' + req.body.location + '</p>'
     htmlContent += '<p>Willing to travel for jobs? : ' + req.body.travel + '</p>'
-    htmlContent += '<p>Video link : ' + req.body.video + '</p>'
-    htmlContent += '<br><a href="http://' + serverName + '/FlReview/' + req.body.email + '/Approved"> Approve </a>';
-    htmlContent += '<br><a href="http://' + serverName + '/FlReview/' + req.body.email + '/Rejected"> Reject </a>';
+    htmlContent += '<p>Video link : <a href=' + req.body.video + '> ' + req.body.video + ' </a></p>'
+    htmlContent += '<br><a href="' + serverName + '/FlReview/' + req.body.email + '/Approved"> APPROVE </a>';
+    htmlContent += ' OR <a href="' + serverName + '/FlReview/' + req.body.email + '/Rejected"> REJECT </a>';
 
 //    return;
     let mailOptions = {
         from: 'yash.97373@gmail.com',
-        to: 'pruthvi.zandawala@gmail.com',
+        to: process.env.MAIL_TO,
         subject: 'Freelancer[' + req.body.name + '] profile for review',
         html: htmlContent,
         attachments: [{
